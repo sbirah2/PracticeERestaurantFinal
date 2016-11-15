@@ -59,5 +59,25 @@ namespace eRestaurantSystem.BLL
                 return results.ToList();
             }
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<CategoryMenuItems> GetReportCategory()
+        {
+            using (var context = new eRestaurantContext())
+            {
+                var results = from food in context.Items
+                              orderby food.MenuCategory.Description
+                              select new MenuCategoryFoodItemsPOCO
+                              {
+
+                                  MenuCategoryDescription = food.MenuCategory.Description,
+                                  ItemID = food.ItemID,
+                                  FoodDescription = food.Description,
+                                  CurrentPrice = food.CurrentPrice,
+                                  TimesServed = food.BillItems.Count()
+                              };
+                return results.ToList();
+            }
+        }
     }
 }

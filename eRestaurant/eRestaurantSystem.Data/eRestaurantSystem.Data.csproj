@@ -47,6 +47,7 @@
     <Compile Include="Entities\BillItem.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\MenuCategory.cs" />
+    <Compile Include="POCOs\CategoryMenuItems.cs" />
     <Compile Include="POCOs\FoodItemCounts.cs" />
     <Compile Include="POCOs\MenuCategoryFoodItemsPOCO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
